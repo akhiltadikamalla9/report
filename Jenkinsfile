@@ -4,7 +4,7 @@ pipeline{
         stage('Read File') {
             steps {
                 script {
-                    ECHO "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    echo "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                     def fileContents = readFile('README.md')
                     echo "File contents: ${fileContents}"
                 }
