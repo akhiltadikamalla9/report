@@ -1,12 +1,6 @@
 pipeline{
     agent any 
     stages {
-        stage('Clone') {
-        steps {
-            echo "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"
-            git url: 'https://github.com/akhiltadikamalla9/devops.git'
-          }
-    }
     stage('Reading file of another repository') {
             steps {
                 script {
