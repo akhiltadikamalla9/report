@@ -3,6 +3,7 @@ pipeline{
     stages {
         stage('Clone') {
         steps {
+            echo "ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"
             git url: 'https://github.com/akhiltadikamalla9/devops.git'
           }
     }
