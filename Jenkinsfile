@@ -1,6 +1,21 @@
 pipeline{
     agent any 
     stages {
+        stage('Clone') {
+        steps {
+            git url: 'https://github.com/akhiltadikamalla9/devops.git'
+          }
+    }
+    stage('Reading file of another repository') {
+            steps {
+                script {
+                    sh ' pwd '
+                    echo "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB"
+                    def fileContents = readFile('report.txt')
+                    echo "File contents: ${fileContents}"
+                }
+            }
+        }
         stage('Read File') {
             steps {
                 script {
