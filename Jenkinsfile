@@ -15,7 +15,8 @@ pipeline{
                     def fileContents = "/src/main/resources/report.txt"
                     echo "File contents: ${fileContents}"
                      echo "File contents111: ${file}"
-                    cat report.txt
+                    echo 'zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz'
+                    sh 'cat report.txt'
                 }
             }
         }
