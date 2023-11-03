@@ -8,10 +8,11 @@ pipeline{
                     echo 'aaaaaaaaaaaaaaaaaaaaa'
                     checkout([$class: 'GitSCM', branches: [[name: 'main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/akhiltadikamalla9/devops.git']]])
                     echo 'cccccccccccccccccccccccc'
-                    def file = /src/main/resources/report.txt
+                    def file = readFile '/src/main/resources/report.txt'
                     echo 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb'
-                    def fileContents = readFile('report.txt')
+                    def fileContents = "/src/main/resources/report.txt"
                     echo "File contents: ${fileContents}"
+                     echo "File contents111: ${file}"
                     cat report.txt
                 }
             }
