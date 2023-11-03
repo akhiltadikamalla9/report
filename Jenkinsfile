@@ -6,7 +6,7 @@ pipeline{
                 script {
                     sh 'pwd'
                     echo 'aaaaaaaaaaaaaaaaaaaaa'
-                    checkout([$class: 'GitSCM', branches: [[name: 'main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/akhiltadikamalla9/devops.git']]])
+                    checkout([$class: 'GitSCM', userRemoteConfigs: [[url: 'https://github.com/akhiltadikamalla9/devops.git']]])
                     echo 'cccccccccccccccccccccccc'
                     sh 'pwd'
                     echo 'dddddddddddddddddddddddddd'
