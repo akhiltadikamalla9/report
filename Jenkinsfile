@@ -10,7 +10,7 @@ pipeline{
                     echo 'cccccccccccccccccccccccc'
                     sh 'pwd'
                     echo 'dddddddddddddddddddddddddd'
-                    def file = readFile '/resources/report.txt'
+                    def file = readFile 'report.txt'
                     echo 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb'
                     def fileContents = "/src/main/resources/report.txt"
                     echo "File contents: ${fileContents}"
