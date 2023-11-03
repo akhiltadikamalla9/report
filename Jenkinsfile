@@ -5,9 +5,9 @@ pipeline{
             steps {
                 script {
                     sh ' pwd '
-                    //checkout([$class: 'GitSCM', userRemoteConfigs: [[url: 'https://github.com/akhiltadikamalla9/devops.git']]])
-                    checkout([$class: 'GitSCM', branches: [[name: 'main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/akhiltadikamalla9/devops.git']]])
-                    def file = /src/main/resources/report.txt
+                    checkout([$class: 'GitSCM', userRemoteConfigs: [[url: 'https://github.com/akhiltadikamalla9/devops.git']]])
+                    //checkout([$class: 'GitSCM', branches: [[name: 'main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/akhiltadikamalla9/devops.git']]])
+                    def file = ./src/main/resources/report.txt
                     def fileContents = readFile('report.txt')
                     echo "File contents: ${fileContents}"
                     cat report.txt
