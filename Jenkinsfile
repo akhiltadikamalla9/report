@@ -17,7 +17,7 @@ pipeline{
 			       echo "33333333333333333333333333"
 			    """
 			def fileContent1
-			cat $imagefile $fileContent1
+			cp '$imagefile' '$fileContent1'
 			sh """
 			curl -v POST -H 'Content-type: application/json' --data '{"text": "image tag details \n: ${fileContent1}"}' https://hooks.slack.com/services/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
    			"""
