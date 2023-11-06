@@ -14,7 +14,7 @@ pipeline{
 			       sed -i "/tsb-onboarding-user-persistence-validator/d" $imagefile
                                echo "tsb-onboarding-user-persistence-validator 06-11-2023-04-48\n" >> $imagefile
 			       echo "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-                               echo $imagefile >> $fileContent1
+                               cp $imagefile $fileContent1
 			       echo "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
 			       curl -v POST -H 'Content-type: application/json' --data '{"text": "image tag details \n: ${fileContent1}"}' https://hooks.slack.com/services/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
 	  			echo "ccccccccccccccccccccccccccccc"
