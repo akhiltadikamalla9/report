@@ -9,6 +9,7 @@ pipeline{
                     checkout([$class: 'GitSCM', branches: [[name: 'main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/akhiltadikamalla9/devops.git']]])
 			    def fileContent = readFile 'report.txt'
 			    def imagefile = "report.txt"
+			def fileContent1 
 			    sh """
 			       sed -i "/tsb-onboarding-user-persistence-validator/d" $imagefile
                                echo "tsb-onboarding-user-persistence-validator 06-11-2023-04-48\n" >> $imagefile
