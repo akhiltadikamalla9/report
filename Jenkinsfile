@@ -10,15 +10,14 @@ pipeline{
 			    def fileContent = readFile 'report.txt'
 			    def imagefile = "report.txt"
 			    sh """
-			       sed -i "/tsb-onboarding-user-persistence-validator/d" $imagefile
+       				echo "11111111111111111111111111"
+			       	sed -i "/tsb-onboarding-user-persistence-validator/d" $imagefile
+	 			 echo "22222222222222222222222222"
                                echo "tsb-onboarding-user-persistence-validator 06-11-2023-04-48\n" >> $imagefile
-			       def fileContent1
-				cat $imagefile $fileContent1
+			       echo "33333333333333333333333333"
 			    """
-			echo "11111111111111111111111111"
-			
-			echo "22222222222222222222222222"
-			echo "33333333333333333333333333"
+			def fileContent1
+			cat $imagefile $fileContent1
 			sh """
 			curl -v POST -H 'Content-type: application/json' --data '{"text": "image tag details \n: ${fileContent1}"}' https://hooks.slack.com/services/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
    			"""
