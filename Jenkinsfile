@@ -7,16 +7,17 @@ pipeline{
                     sh 'pwd'
                     echo 'aaaaaaaaaaaaaaaaaaaaa'
                     checkout([$class: 'GitSCM', userRemoteConfigs: [[url: 'https://github.com/akhiltadikamalla9/devops.git']]])
-                    echo 'cccccccccccccccccccccccc'
-                    sh 'pwd'
-                    echo 'dddddddddddddddddddddddddd'
-                    def file = readFile 'report.txt'
-                    echo 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb'
-                    def fileContents = "/src/main/resources/report.txt"
-                    echo "File contents: ${fileContents}"
-                     echo "File contents111: ${file}"
-                    echo 'zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz'
-                    sh 'cat report.txt'
+			    def fileContent = readFile 'report.txt'
+			    def imagefile = "report.txt"
+		            // Print the content
+		            echo fileContent
+			    sh """
+			       sed -i "/${msname}/d" $imagefile
+                               cat $imagefile
+                               echo "${msname} ${imageTag}\n" >> $imagefile
+                               cat $imagefile
+			       curl -v -X POST -H 'Content-type: application/json' --data '{"text": "Namespace: ${namespace} | Microservice Name: ${msname} | Image Tag: ${imageTag}"}' https://hooks.slack.com/services/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
+			    """
                 }
             }
         }
