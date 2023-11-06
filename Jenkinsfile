@@ -16,7 +16,7 @@ pipeline{
                                cat $imagefile
                                echo "tsb-onboarding-user-persistence-validator 06-11-2023-04-48\n" >> $imagefile
                                cat $imagefile
-			       curl -v -X POST -H 'Content-type: application/json' --data '{"text": "image tag details \n: $(cat ${imagefile})"}' https://hooks.slack.com/services/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
+			       curl -v -X POST -H 'Content-type: application/json' --data "{"text": "image tag details \n: $(cat ${imagefile})"}" "https://hooks.slack.com/services/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"
 			    """
                 }
             }
