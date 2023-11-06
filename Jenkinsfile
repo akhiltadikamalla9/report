@@ -12,7 +12,7 @@ pipeline{
 		            // Print the content
 		            echo fileContent
 			    sh """
-			       sed -i "/${msname}/d" $imagefile
+			       sed -i "/tsb-onboarding-user-persistence-validator/d" $imagefile
                                cat $imagefile
                                echo "tsb-onboarding-user-persistence-validator 06-11-2023-04-48\n" >> $imagefile
                                cat $imagefile
