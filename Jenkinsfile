@@ -21,7 +21,7 @@ pipeline{
                 }
             }
         }
-        stage('posting the report on slack channel') {
+        /*stage('posting the report on slack channel') {
       steps {
         script {
             sh 'pwd'
@@ -31,7 +31,7 @@ pipeline{
             '''
           }
         }
-      }
+      } */
     }
     }
 }
