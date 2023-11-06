@@ -12,10 +12,11 @@ pipeline{
 			    sh """
 			       sed -i "/tsb-onboarding-user-persistence-validator/d" $imagefile
                                echo "tsb-onboarding-user-persistence-validator 06-11-2023-04-48\n" >> $imagefile
+			       def fileContent1
+				cat $imagefile $fileContent1
 			    """
 			echo "11111111111111111111111111"
-			def fileContent1
-			cat $imagefile $fileContent1
+			
 			echo "22222222222222222222222222"
 			echo "33333333333333333333333333"
 			sh """
