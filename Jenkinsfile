@@ -14,7 +14,7 @@ pipeline{
 			       	sed -i "/tsb-onboarding-user-persistence-validator/d" $imagefile
 	 			 echo "22222222222222222222222222"
                                echo "tsb-onboarding-user-persistence-validator 06-11-2023-04-48\n" >> $imagefile
-			       echo "33333333333333333333333333"
+			       echo $imagefile
 			    """
 			def fileContent1
 			sh 'cat $imagefile >> $fileContent1'
