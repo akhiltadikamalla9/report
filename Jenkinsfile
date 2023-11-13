@@ -10,7 +10,7 @@ pipeline{
 			def environment = params.ENVIRONMENT
 			echo "$ENVIRONMENT"
 			echo 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb'
-			def fileName = environment.get('ENVIRONMENT') + '.txt'
+			def fileName =$ENVIRONMENT + '.txt'
 			echo 'cccccccccccccccccccccccccccccccccccc'
 			def file = new File(fileName)
 			echo 'dddddddddddddddddddddddddddddddd'
