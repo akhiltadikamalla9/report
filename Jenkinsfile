@@ -24,9 +24,9 @@ pipeline{
                                echo "tsb-onboarding-user-persistence-validator 06-11-2023-04-48\n" >> report1.txt
 			       echo report1.txt
 			    """
-			def fileContent = readFile 'report1.txt'
+			def fileContent1 = readFile 'report1.txt'
 			sh """
-			curl -v POST -H 'Content-type: application/json' --data '{"text": "image tag details \n: ${fileContent}"}' https://hooks.slack.com/services/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
+			curl -v POST -H 'Content-type: application/json' --data '{"text": "image tag details \n: ${fileContent1}"}' https://hooks.slack.com/services/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
    			"""
 			echo "44444444444444444444444444444"
 			} else {
