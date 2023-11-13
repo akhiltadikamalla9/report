@@ -13,7 +13,6 @@ pipeline{
 			echo 'cccccccccccccccccccccccccccccccccccc'
 			def file = new File(fileName)
 			echo 'dddddddddddddddddddddddddddddddd'
-			if (file.exists()) {
 			  echo "Reading file: ${fileName}"
 			  def fileContent = file.text
 			  echo fileContent
@@ -31,9 +30,6 @@ pipeline{
 			curl -v POST -H 'Content-type: application/json' --data '{"text": "image tag details \n: ${fileContent1}"}' https://hooks.slack.com/services/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
    			"""
 			echo "44444444444444444444444444444"
-			} else {
-			  println "File not found: ${fileName}"
-			}
                 }
             }
         }
