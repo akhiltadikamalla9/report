@@ -8,9 +8,11 @@ pipeline{
                     echo 'aaaaaaaaaaaaaaaaaaaaa'
                     checkout([$class: 'GitSCM', branches: [[name: 'main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/akhiltadikamalla9/devops.git']]])
 			def environment = System.getenv()
+			echo 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb'
 			def fileName = environment.get('ENVIRONMENT') + '.txt'
+			echo 'cccccccccccccccccccccccccccccccccccc'
 			def file = new File(fileName)
-			
+			echo 'dddddddddddddddddddddddddddddddd'
 			if (file.exists()) {
 			  println "Reading file: ${fileName}"
 			  def fileContent = file.text
