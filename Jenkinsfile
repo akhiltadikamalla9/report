@@ -12,11 +12,10 @@ pipeline{
 			def fileName = params.get('ENVIRONMENT') + '.txt'
 			echo 'fileName'
 			echo 'cccccccccccccccccccccccccccccccccccc'
-			def file = new File(fileName)
 			echo 'dddddddddddddddddddddddddddddddd'
 			  echo "Reading file: ${fileName}"
 			echo 'eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
-			  def fileContent = file.text
+			  def fileContent = read file '$fileName'
 			echo 'ffffffffffffffffffffffffffffffffffffffff'
 			  echo fileContent
 			sh """
