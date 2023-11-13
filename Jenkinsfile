@@ -15,7 +15,7 @@ pipeline{
 			echo 'dddddddddddddddddddddddddddddddd'
 			  echo "Reading file: ${fileName}"
 			echo 'eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
-			  def fileContent = read file '$fileName'
+			  def fileContent = readFile '$fileName'
 			echo 'ffffffffffffffffffffffffffffffffffffffff'
 			  echo fileContent
 			sh """
