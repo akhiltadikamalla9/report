@@ -7,7 +7,8 @@ pipeline{
                     sh 'pwd'
                     echo 'aaaaaaaaaaaaaaaaaaaaa'
                     checkout([$class: 'GitSCM', branches: [[name: 'main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/akhiltadikamalla9/devops.git']]])
-			def environment = System.getenv()
+			def environment = params.ENVIRONMENT
+			echo "$ENVIRONMENT"
 			echo 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb'
 			def fileName = environment.get('ENVIRONMENT') + '.txt'
 			echo 'cccccccccccccccccccccccccccccccccccc'
