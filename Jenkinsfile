@@ -11,6 +11,7 @@ pipeline{
 			echo "${ENVIRONMENT}"
 			echo 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb'
 			def fileName = ${ENVIRONMENT} + '.txt'
+			echo 'fileName'
 			echo 'cccccccccccccccccccccccccccccccccccc'
 			def file = new File(fileName)
 			echo 'dddddddddddddddddddddddddddddddd'
