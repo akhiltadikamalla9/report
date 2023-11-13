@@ -9,7 +9,7 @@ pipeline{
                     checkout([$class: 'GitSCM', branches: [[name: 'main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/akhiltadikamalla9/devops.git']]])
 			echo "${ENVIRONMENT}"
 			echo 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb'
-			def fileName = ${ENVIRONMENT} + '.txt'
+			def fileName = params.get('ENVIRONMENT') + '.txt'
 			echo 'fileName'
 			echo 'cccccccccccccccccccccccccccccccccccc'
 			def file = new File(fileName)
