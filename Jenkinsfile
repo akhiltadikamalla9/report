@@ -14,9 +14,9 @@ pipeline{
 			def file = new File(fileName)
 			echo 'dddddddddddddddddddddddddddddddd'
 			if (file.exists()) {
-			  println "Reading file: ${fileName}"
+			  echo "Reading file: ${fileName}"
 			  def fileContent = file.text
-			  println fileContent
+			  echo fileContent
 			sh """
        				touch report1.txt
 	   			cp file.text report1.txt
