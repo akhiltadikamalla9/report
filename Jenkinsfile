@@ -15,7 +15,9 @@ pipeline{
 			def file = new File(fileName)
 			echo 'dddddddddddddddddddddddddddddddd'
 			  echo "Reading file: ${fileName}"
+			echo 'eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
 			  def fileContent = file.text
+			echo 'ffffffffffffffffffffffffffffffffffffffff'
 			  echo fileContent
 			sh """
        				touch report1.txt
