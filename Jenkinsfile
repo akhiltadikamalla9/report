@@ -16,7 +16,7 @@ pipeline{
 			echo "Reading file: ${fileName}"
 			echo 'eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
 			def fileContent = readFile "$fileName"
-			if (fileContent.exists()) {
+			if (fileName.exists()) {
 			echo 'ffffffffffffffffffffffffffffffffffffffff'
 			echo fileContent
 			sh """
