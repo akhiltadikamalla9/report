@@ -4,21 +4,21 @@ pipeline{
     stage('Reading file of another repository') {
             steps {
                 script {
-                    sh 'pwd'
-                    echo 'aaaaaaaaaaaaaaaaaaaaa'
+                        sh 'pwd'
+                        echo 'aaaaaaaaaaaaaaaaaaaaa'
 			echo "${ENVIRONMENT}"
 			echo 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb'
 			def fileName = params.get('ENVIRONMENT') + '.txt'
 			echo 'fileName'
 			echo 'cccccccccccccccccccccccccccccccccccc'
-			echo 'dddddddddddddddddddddddddddddddd'			
-			  echo "Reading file: ${fileName}"
-			echo 'eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
-			  def fileContent = readFile '$fileName'
-			if (fileContent.exists()) {
+			echo 'dddddddddddddddddddddddddddddddd'	
 			checkout([$class: 'GitSCM', branches: [[name: 'main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/akhiltadikamalla9/devops.git']]])
+			echo "Reading file: ${fileName}"
+			echo 'eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
+			def fileContent = readFile '$fileName'
+			if (fileContent.exists()) {
 			echo 'ffffffffffffffffffffffffffffffffffffffff'
-			  echo fileContent
+			echo fileContent
 			sh """
        				touch report1.txt
 	   			cp file.text report1.txt
