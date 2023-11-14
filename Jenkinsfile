@@ -4,7 +4,7 @@ pipeline{
     stage('Reading file of another repository') {
             steps {
                 script {
-		if (file.exists()) {
+		if (fileContent.exists()) {
                     sh 'pwd'
                     echo 'aaaaaaaaaaaaaaaaaaaaa'
 			echo "${ENVIRONMENT}"
