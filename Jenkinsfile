@@ -8,7 +8,7 @@ pipeline{
                         echo 'aaaaaaaaaaaaaaaaaaaaa'
 			echo "${ENVIRONMENT}"
 			echo 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb'
-			def fileName = params.get("ENVIRONMENT") + '.txt'
+			def fileName = params.get('ENVIRONMENT') + '.txt'
 			echo "${fileName}"
 			echo 'cccccccccccccccccccccccccccccccccccc'
 			echo 'dddddddddddddddddddddddddddddddd'	
