@@ -4,7 +4,6 @@ pipeline{
     stage('Reading file of another repository') {
             steps {
                 script {
-		if (fileContent.exists()) {
                     sh 'pwd'
                     echo 'aaaaaaaaaaaaaaaaaaaaa'
 			echo "${ENVIRONMENT}"
@@ -16,6 +15,7 @@ pipeline{
 			checkout([$class: 'GitSCM', branches: [[name: 'main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/akhiltadikamalla9/devops.git']]])			
 			  echo "Reading file: ${fileName}"
 			echo 'eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
+			if (fileContent.exists()) {
 			  def fileContent = readFile '$fileName'
 			echo 'ffffffffffffffffffffffffffffffffffffffff'
 			  echo fileContent
