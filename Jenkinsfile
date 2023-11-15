@@ -12,7 +12,6 @@ pipeline{
 			echo "${fileName}"
 			checkout([$class: 'GitSCM', branches: [[name: 'main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/akhiltadikamalla9/devops.git']]])
 			echo "Reading file: ${fileName}"
-			if (fileName.canRead()) {
 			def fileContent = readFile "$fileName"
 			echo 'ffffffffffffffffffffffffffffffffffffffff'
 			echo fileContent
@@ -31,9 +30,6 @@ pipeline{
 			curl -v POST -H 'Content-type: application/json' --data '{"text": "image tag details \n: ${fileContent1}"}' https://hooks.slack.com/services/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
    			"""
 			echo "44444444444444444444444444444"
-			}else {
-			  println "File not found: ${fileName}"
-			}
                 }
             }
         }
