@@ -18,7 +18,8 @@ pipeline{
 			echo fileContent
 			sh """
        				touch report1.txt
-	   			cp file.text report1.txt
+	   			echo "112222222111111111111111111111111"
+	   			cp $fileName report1.txt
        				echo "11111111111111111111111111"
 			       	sed -i "/tsb-onboarding-user-persistence-validator/d" report1.txt
 	 			 echo "22222222222222222222222222"
