@@ -10,10 +10,9 @@ pipeline{
 			echo 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb'
 			def fileName = params.get('ENVIRONMENT') + '.txt'
 			echo "${fileName}"
-			if (fileName.exists()) {
 			checkout([$class: 'GitSCM', branches: [[name: 'main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/akhiltadikamalla9/devops.git']]])
 			echo "Reading file: ${fileName}"
-			echo 'eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
+			if (fileName.exists()) {
 			def fileContent = readFile "$fileName"
 			echo 'ffffffffffffffffffffffffffffffffffffffff'
 			echo fileContent
