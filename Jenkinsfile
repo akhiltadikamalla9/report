@@ -14,6 +14,7 @@ pipeline{
 			checkout([$class: 'GitSCM', branches: [[name: 'main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/akhiltadikamalla9/devops.git']]])
 			echo "Reading file: ${fileName}"
 			def fileContent = readFile "$fileName"
+			sh 'pwd'
 			if (file.exists()) {
 			sh """
        				touch report1.txt
