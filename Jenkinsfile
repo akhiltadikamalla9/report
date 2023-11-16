@@ -6,12 +6,12 @@ pipeline{
                 script {
                         sh 'pwd'
                         echo 'aaaaaaaaaaaaaaaaaaaaa'
+			checkout([$class: 'GitSCM', branches: [[name: 'main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/akhiltadikamalla9/devops.git']]])
 			echo "${ENVIRONMENT}"
 			echo 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb'
 			def fileName = params.get('ENVIRONMENT') + '.txt'
 			echo "${fileName}"
 			def file = new File(fileName)
-			checkout([$class: 'GitSCM', branches: [[name: 'main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/akhiltadikamalla9/devops.git']]])
 			echo "Reading file: ${fileName}"
 			def fileContent = readFile "$fileName"
 			sh 'pwd'
