@@ -12,11 +12,11 @@ pipeline{
 			echo "${fileName}"
 			def file = new File(fileName)
 			checkout([$class: 'GitSCM', branches: [[name: 'main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/akhiltadikamalla9/devops.git']]])
-			if (file.exists()) {
 			echo "Reading file: ${fileName}"
 			def fileContent = readFile "$fileName"
 			echo 'ffffffffffffffffffffffffffffffffffffffff'
 			echo fileContent
+			if (file.exists()) {
 			sh """
        				touch report1.txt
 	   			echo "112222222111111111111111111111111"
